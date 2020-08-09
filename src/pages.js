@@ -82,9 +82,9 @@ const saveClass = async (req,res) =>{
         const db = await Database
         await createProffy(db,{proffyValue,classValue,scheduleValues})
 
-        let query = "?subject=" + classValue.subject
-        query+= "&weekday=" + scheduleValues[0].weekday
-        query+= "&time=" + scheduleValues[0].time_from
+        let query = "?subject=" + req.body.subject
+        query+= "&weekday=" + req.body.weekday[0]
+        query+= "&time=" + req.body.time_from[0]
 
         res.redirect("/study"+query)
 
