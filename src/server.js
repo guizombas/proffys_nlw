@@ -29,4 +29,4 @@ server
 .get('/giveClasses', pageGiveClasses)
 .post('/saveClass', saveClass)
 //inicia servidor
-.listen("5500")
+.listen(  process.env.PORT || "5500")
